@@ -13,10 +13,10 @@ class Solution {
 public:
   int ans = 0;
   void dfs(TreeNode *root, int sum) {
-    if (root == NULL) {
-      ans += sum;
-      return;
-    }
+    // if (root == NULL) {
+    //   ans += sum;
+    //   return;
+    // }
     sum *= 10;
     sum += root -> val;
     if (root -> left) {
