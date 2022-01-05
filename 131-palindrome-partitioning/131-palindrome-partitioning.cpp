@@ -16,10 +16,10 @@ public:
       ans.push_back(v);
       return;
     }
-    for(int i = idx; i < s.size(); ++i) {
+    for(int i = idx; i < s.size(); i++) {
       if(isPalindrome(s, idx, i)) {
         v.push_back(s.substr(idx, i - idx + 1));
-        solve(i+1, s, v);
+        solve(i + 1, s, v);
         v.pop_back();
       }
     }
