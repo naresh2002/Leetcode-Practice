@@ -8,6 +8,9 @@
  */
 class Solution {
 public:
+  
+  // Cannot be done by fast and slow pointers as fast pointer might skip cycle initiation point and directly be equal to slow
+  
   ListNode *detectCycle(ListNode *head) {
     unordered_map<ListNode*, int> m;
     while (head != NULL) {
