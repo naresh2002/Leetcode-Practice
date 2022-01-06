@@ -46,7 +46,7 @@ public:
     if (!head || !head -> next) {
       return head;
     }
-    ListNode *slow = head, *fast = head -> next;
+    ListNode *slow = head, *fast = head -> next;  // Why fast = head -> next insted of head
     while (fast && fast -> next) {
       slow = slow -> next;
       fast = fast -> next -> next;
