@@ -1,1 +1,1 @@
-​
+For using Kadane in multiplication take min and max at all times
