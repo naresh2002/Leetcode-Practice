@@ -5,7 +5,7 @@ public:
     int l = 0, r = n - 1;
 
     while(l < r) {
-      int mid = l + (r - l) / 2;
+      int mid = (r + l) / 2;  
 
       if(arr[mid] < arr[mid + 1]) {
           l = mid + 1;
