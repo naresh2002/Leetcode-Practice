@@ -1,0 +1,1 @@
+https://leetcode.com/problems/excel-sheet-column-title/discuss/1645620/Hc%2B%2B-very-easy-solution-use-ASCII-and-Runtime-0ms
