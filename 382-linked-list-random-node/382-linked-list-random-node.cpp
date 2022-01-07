@@ -9,19 +9,27 @@
  * };
  */
 class Solution {
-  vector<int> v;
   int n;
+  ListNode *var;
 public:
   Solution(ListNode* head) {
-    while (head != NULL) {
-      v.push_back(head -> val);
-      head = head -> next;
+    var = head;
+    ListNode* node = head;
+    n = 0;
+    while (node != NULL) {
+      node = node -> next;
+      n++;
     }
-    n = v.size();
   }
 
   int getRandom() {
-    return v[rand() % n];
+    int p = rand() % n;
+    ListNode *tmp = var;
+    while (p > 0) {
+      tmp = tmp -> next;
+      p--;
+    }
+    return tmp->val;
   }
 };
 
