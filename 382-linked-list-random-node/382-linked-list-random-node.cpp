@@ -22,8 +22,6 @@ public:
 
   int getRandom() {
     return v[rand() % n];
-    // n--;
-    // return 
   }
 };
 
