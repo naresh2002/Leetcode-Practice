@@ -1,0 +1,1 @@
+https://leetcode.com/problems/excel-sheet-column-number/discuss/1648596/Hc%2B%2B-very-easy-solution-faster-than-100.00-and-usage-less-than-90.56
