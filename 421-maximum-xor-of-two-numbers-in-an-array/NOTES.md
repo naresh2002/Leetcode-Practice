@@ -1,0 +1,1 @@
+https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/388658/C%2B%2B-O(n)-trie-beat-85
