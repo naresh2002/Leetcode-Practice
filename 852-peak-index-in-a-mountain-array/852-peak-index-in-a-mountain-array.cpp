@@ -5,16 +5,13 @@ public:
         int l = 0, r = n - 1, mid;
         while (l <= r) {
             mid = (l + r) / 2;
-            if (v[mid] > v[mid - 1] && v[mid] > v[mid + 1]) {
-                return mid;
-            }
-            else if (v[mid - 1] < v[mid] && v[mid] < v[mid + 1]) {
-                l = mid;
+            if (v[mid] < v[mid + 1]) {
+                l = mid + 1;
             }
             else {
-                r = mid;
+                r = mid - 1;
             }
         }
-        return 0;
+        return l;
     }
 };
