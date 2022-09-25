@@ -1,19 +1,18 @@
 class Solution {
 public:
-    int ans;
-    void dfs (int curr, int tot, vector<int> & v, int target) {
+    int dfs (int curr, int tot, vector<int> & v, int target) {
         if (curr == v.size()) {
             if (tot == target) {
-                ans++;
+                return 1;
             }
-            return;
+            return 0;
         }
-        dfs(curr + 1, tot + v[curr], v, target);
-        dfs(curr + 1, tot - v[curr], v, target);
+        int a = dfs(curr + 1, tot + v[curr], v, target);
+        int b = dfs(curr + 1, tot - v[curr], v, target);
+        return a + b;
     }
     
     int findTargetSumWays(vector<int>& v, int target) {
-        dfs(0, 0, v, target);
-        return ans;
+        return dfs(0, 0, v, target);
     }
 };
