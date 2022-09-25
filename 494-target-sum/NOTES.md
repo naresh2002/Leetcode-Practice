@@ -6,5 +6,5 @@ S1 - S2 = target;
 S1 + S2 = sum(v);
 Adding Above Two :
 => **2(S1) = target + sum(v)**
-Now we just need to find no. of S1 which satisfies this eq.
+Now we just need to find no. of S1 which satisfies this eq. (keep in mind that wmpty subset sum = 0)
 **Not Possible** when **target + sum(v) is odd**
