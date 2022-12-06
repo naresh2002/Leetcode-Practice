@@ -17,8 +17,6 @@ public:
         ListNode *temp1 = head;
         ListNode *temp2 = head -> next;
         ListNode *temp3 = head -> next;
-        // ListNode *temp11 = temp1;
-        // ListNode *temp22 = temp2;
         
         while (temp2 -> next) {
             temp1 -> next = temp2 -> next;
