@@ -7,7 +7,7 @@ public:
         
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
-                if (dp[j] and find(wordDict.begin(), wordDict.end(), s.substr(j, i - j)) != wordDict.end()) {
+                if (dp[j] && find(wordDict.begin(), wordDict.end(), s.substr(j, i - j)) != wordDict.end()) {
                     dp[i] = true;
                 }
             }
