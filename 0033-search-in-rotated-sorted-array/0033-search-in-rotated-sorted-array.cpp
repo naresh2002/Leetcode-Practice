@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //  https://leetcode.com/problems/search-in-rotated-sorted-array/dis
     int search(vector<int>& nums, int target) {
         int l = 0, r = nums.size();
         while (l < r) {
