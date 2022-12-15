@@ -6,10 +6,10 @@ public:
         dp[n - 1] = 0;
         for (int i = n - 2; i >= 0; i--) {
             for (int j = 1; j <= nums[i]; j++) {
-                dp[i] = min(dp[i], dp[min(n - 1, i + j)] + 1);
-                // if (i + j == n - 1) {
-                //     break;
-                // }
+                dp[i] = min(dp[i], dp[i + j] + 1);
+                if (i + j == n - 1) {
+                    break;
+                }
             }
         }
         return dp[0];
