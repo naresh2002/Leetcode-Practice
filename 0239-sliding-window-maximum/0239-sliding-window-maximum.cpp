@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //  https://leetcode.com/problems/sliding-window-maximum/discuss/951894/C%2B%2B-Easy-DP-or-O(n)-or-Explained-or-No-Deque-Required-%3AD
+    //  GOOD METHOD
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         int n = nums.size();
         vector<int> leftmax (n), rightmax (n);
