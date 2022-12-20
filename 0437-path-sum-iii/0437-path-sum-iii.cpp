@@ -18,6 +18,9 @@ public:
         }
         m[root].push_back(root -> val);
         for (auto x : m[parent]) {
+            //  Using INT_MIN and INT_MAX can fail for extreme cases
+            //  like first add INT_MAX + 5 and then subtract 6 from it
+            //  but in our case it will nott reach till end condition
             if ((x + root -> val) < INT_MIN || (x + root -> val) > INT_MAX) {
                 continue;
             }
