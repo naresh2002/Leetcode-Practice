@@ -16,7 +16,6 @@ public:
                 buy = prices[i];
             }
             pref[i] = max(pref[i - 1], prices[i] - buy);
-            // cout << pref[i] << " " << buy << endl;
         }
         for (int i = n - 2; i >= 0; i--) {
             if (prices[i] > sell) {
