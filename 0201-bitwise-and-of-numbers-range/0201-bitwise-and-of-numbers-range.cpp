@@ -7,9 +7,6 @@ public:
         int ans = left;
         for (long long i = left; i <= right; i++) {
             ans &= i;
-            // if (!ans) {
-            //     return ans;
-            // }
         }
         return ans;
     }
