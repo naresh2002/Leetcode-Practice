@@ -18,6 +18,26 @@ public:
 
 class Solution {
 public:
+    void func(Node* root) {
+        if (!root) {
+            return;
+        }
+        if (root -> left != NULL) {
+            (root -> left) -> next = root -> right;
+        }
+        if (root -> next != NULL && root -> right != NULL) {
+            (root -> right) -> next = (root -> next) -> left;
+        }
+        func(root -> left);
+        func(root -> right);
+    }
+    
+    Node* connect(Node* root) {
+        func(root);
+        return root;
+    }
+    
+    /*
     map<int, vector<Node*>> depthNodes;
     void dfs(Node *root, int depth) {
         if(!root) {
@@ -37,4 +57,5 @@ public:
         dfs(root, 0);
         return root;
     }
+    */
 };
