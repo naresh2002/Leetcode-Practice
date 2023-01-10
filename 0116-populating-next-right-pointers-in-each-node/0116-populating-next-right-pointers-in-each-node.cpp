@@ -18,7 +18,7 @@ public:
 
 class Solution {
 public:
-    void func(Node* root) {
+    void dfs(Node* root) {
         if (!root) {
             return;
         }
@@ -28,12 +28,12 @@ public:
         if (root -> next != NULL && root -> right != NULL) {
             (root -> right) -> next = (root -> next) -> left;
         }
-        func(root -> left);
-        func(root -> right);
+        dfs(root -> left);
+        dfs(root -> right);
     }
     
     Node* connect(Node* root) {
-        func(root);
+        dfs(root);
         return root;
     }
     
