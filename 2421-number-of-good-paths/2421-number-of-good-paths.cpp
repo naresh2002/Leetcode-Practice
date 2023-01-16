@@ -1,57 +1,5 @@
-/*
 const int N = 30005;
-vector<int> adj[N];
-int par[N], val[N], cnt[N];
 
-class Solution {
-public:
-    int numberOfGoodPaths(vector<int>& vals, vector<vector<int>>& edges) {
-        int n = vals.size();
-        for (int i = 0; i <= n; i++) adj[i].clear();
-        
-        for (auto x : edges) {
-            adj[x[0]].push_back(x[1]);
-            adj[x[1]].push_back(x[0]);
-        }
-        
-        map<int,vector<int>> m;
-        for (int i = 0; i < n; i++) {
-            m[vals[i]].push_back(i);
-        }
-        
-        int ans = 0;
-        for (auto x : m) {
-            // cout << "for val = " << x.first << endl;
-            set<int> s;
-            auto v = x.second;
-            for (auto y : v) {
-                // cout << "make "<< y << endl;
-                make(y, vals[y]);
-                s.insert(y);
-            }
-            for (auto cur : v) {
-                for (auto neg : adj[cur]) {
-                    if (vals[neg] <= vals[cur]) {
-                        // cout << "union " << neg << " " << cur << endl;
-                        unionset(neg, cur);
-                        int leader = findParent(cur);
-                        // cout << "set insert " << leader << " with val = " << val[leader] << " cnt = " << cnt[leader] << endl;;
-                        s.insert(leader);
-                    }
-                }
-            }
-            for (auto x : s) if (x == findParent(x)) {
-                ans += cnt[x] * (cnt[x] + 1) / 2;
-            }
-        }
-        
-        return ans;
-        
-    }
-};
-*/
-
-const int N = 30005;
 class Solution {
 public:    
     int par[N], val[N], cnt[N];
