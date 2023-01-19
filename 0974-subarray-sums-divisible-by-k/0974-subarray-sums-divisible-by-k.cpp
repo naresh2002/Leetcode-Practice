@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // NICE APPROACH (like from 1st modGroup[p] to next modGroup[p] subarray sum will be divisible by k)
     int subarraysDivByK(vector<int>& nums, int k) {
         int n = nums.size();
         int prefixMod = 0;
