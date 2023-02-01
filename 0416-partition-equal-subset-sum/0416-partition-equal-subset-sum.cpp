@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool canPartition(vector<int>& nums) {
+        sort(nums.rbegin(), nums.rend());
         int n = nums.size();
         int tot = 0;
         for (auto x : nums) {
