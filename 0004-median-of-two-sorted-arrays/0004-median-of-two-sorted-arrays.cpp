@@ -53,9 +53,6 @@ public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int n = nums1.size();
         int m = nums2.size();
-        if (!n && !m) {
-            return 0;
-        }
         if (n <= m) {
             return getMedian(nums1, nums2, n, m);
         }
