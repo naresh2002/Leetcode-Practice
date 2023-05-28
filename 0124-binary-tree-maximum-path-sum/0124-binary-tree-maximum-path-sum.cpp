@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    // HELP FROM : https://leetcode.com/problems/binary-tree-maximum-path-sum/discuss/2899997/C%2B%2B-oror-DFS-oror-Subtree-Sum-Method
     int solve(TreeNode *root, int &ans) {
         if (!root) {
             return 0;
