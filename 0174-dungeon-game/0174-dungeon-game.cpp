@@ -34,7 +34,7 @@ public:
                 }
             }
         }
-        return passageAvailable(k, minHealth, n, m);
+        return minHealth[n][m] >= -k;
     }
     
     int calculateMinimumHP(vector<vector<int>>& dungeon) {
