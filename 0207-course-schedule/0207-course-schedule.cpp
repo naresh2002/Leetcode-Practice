@@ -5,7 +5,7 @@ public:
     unordered_map<int, int> done;
     
     bool cyclic(int n) {
-        if (done[n]) {
+        if (done[n]) {  // Prevent TLE
             return false;
         }
         vis[n] = done[n] = 1;
