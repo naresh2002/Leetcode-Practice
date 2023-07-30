@@ -28,36 +28,6 @@ public:
         }
         return v;
     }
-    
-    // vector<vector<int>> atlanticPossible(vector<vector<int>>& heights) {
-    //     queue<vector<int>> q;
-    //     vector<vector<int>> atlantic;
-    //     vector<vector<int>> vis(n, vector<int> (m, 0));
-    //     for (int i = 0; i < n; i++) {
-    //         q.push({i, m - 1});
-    //         vis[i][m - 1] = 1;
-    //     }
-    //     for (int i = 0; i < m; i++) {
-    //         q.push({n - 1, i});
-    //         vis[n - 1][i] = 1;
-    //     }
-    //     while (q.size()) {
-    //         int x = q.front()[0];
-    //         int y = q.front()[1];
-    //         if (x + 1 < n && vis[x + 1][y] == 0 && heights[x + 1][y] >= heights[x][y]) {
-    //             q.push({x + 1, y});
-    //             vis[x + 1][y] = 1;
-    //         }
-    //         if (y - 1 >= 0 && vis[x][y - 1] == 0 && heights[x][y - 1] >= heights[x][y]) {
-    //             q.push({x, y - 1});
-    //             vis[x][y - 1] = 1;
-    //         }
-    //         atlantic.push_back(q.front());
-    //         q.pop();
-    //     }
-    //     return atlantic;
-    // }
-    
 
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
         n = heights.size();
