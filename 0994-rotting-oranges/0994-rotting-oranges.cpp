@@ -24,25 +24,16 @@ public:
             q.push_back({});
             for (auto f : q.front()) {
                 int x = f.first, y = f.second;
-                if (x - 1 >= 0 && grid[x - 1][y] == 1) {
-                    q.back().push_back({x - 1, y});
-                    grid[x - 1][y] = 2;
-                    newRotten++;
-                }
-                if (x + 1 < n && grid[x + 1][y] == 1) {
-                    q.back().push_back({x + 1, y});
-                    grid[x + 1][y] = 2;
-                    newRotten++;
-                }
-                if (y - 1 >= 0 && grid[x][y - 1] == 1) {
-                    q.back().push_back({x, y - 1});
-                    grid[x][y - 1] = 2;
-                    newRotten++;
-                }
-                if (y + 1 < m &&grid[x][y + 1] == 1) {
-                    q.back().push_back({x, y + 1});
-                    grid[x][y + 1] = 2;
-                    newRotten++;
+                vector<pair<int, int>> dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+                for (auto dir : dirs) {
+                    int a = dir.first, b = dir.second;
+                    if (x + a >= 0 && x + a < n &&
+                       y + b >= 0 && y + b < m &&
+                       grid[x + a][y + b] == 1) {
+                        q.back().push_back({x + a, y + b});
+                        grid[x + a][y + b] = 2;
+                        newRotten++;
+                    }
                 }
             }
             fresh -= newRotten;
