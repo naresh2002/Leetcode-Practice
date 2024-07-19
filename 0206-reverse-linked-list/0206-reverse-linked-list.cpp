@@ -10,16 +10,21 @@
  */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        ListNode *prev = NULL;
-        ListNode *curr = head;
-        ListNode *nxt;
-        while (curr) {
-            nxt = curr -> next;
-            curr -> next = prev;
-            prev = curr;
-            curr = nxt;
+    ListNode *node;
+    void reverse(ListNode *head) {
+        if (!head) {
+            return;
         }
-        return prev;
+        reverse(head -> next);
+        node -> next = head;
+        node = node -> next;
+        head -> next = NULL;
+    }
+    
+    ListNode* reverseList(ListNode* head) {
+        node = new ListNode(-1);
+        ListNode* ans = node;
+        reverse(head);
+        return ans -> next;
     }
 };
