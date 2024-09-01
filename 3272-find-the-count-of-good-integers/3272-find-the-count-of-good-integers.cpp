@@ -8,6 +8,7 @@ public:
         return ans;
     }
     
+    // To store all k-palindromic numbers
     void solve (int curr, int n, string &s, set<string> &v, int k) {
         if (curr == n) {
             long long p = 0;
@@ -22,6 +23,7 @@ public:
             }
             return;
         }
+        // To make number palindrome last half characters need to be fixed
         if (curr >= (n + 1) / 2) {
             s += s[n - curr - 1];
             solve(curr + 1, n, s, v, k);
@@ -45,10 +47,12 @@ public:
             for (auto y : x) {
                 m[y]++;
             }
+            // All possible permutations
             long long a = factorial(n);
             for (auto x : m) {
                 a /= factorial(x.second);
             }
+            // Removing permutations for leading zero
             if (m.find('0') != m.end()) {
                 long long b = factorial(n - 1);
                 for (auto x : m) {
