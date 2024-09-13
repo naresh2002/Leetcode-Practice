@@ -19,28 +19,30 @@ public:
         }
         
         int ans = 0;
+        vector<pair<int, int>> dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         while (1) {
-            int newRotten = 0;
             q.push_back({});
-            for (auto f : q.front()) {
-                int x = f.first, y = f.second;
-                vector<pair<int, int>> dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+            int newRotten = 0;
+            for (auto p : q.front()) {
+                int x = p.first;
+                int y = p.second;
                 for (auto dir : dirs) {
-                    int a = dir.first, b = dir.second;
-                    if (x + a >= 0 && x + a < n &&
-                       y + b >= 0 && y + b < m &&
-                       grid[x + a][y + b] == 1) {
-                        q.back().push_back({x + a, y + b});
-                        grid[x + a][y + b] = 2;
-                        newRotten++;
+                    int xx = x + dir.first;
+                    int yy = y + dir.second;
+                    if (xx >= 0 && yy >= 0 && xx < n && yy < m) {
+                        if (grid[xx][yy] == 1) {
+                            q.back().push_back({xx, yy});
+                            grid[xx][yy] = 2;
+                            newRotten++;
+                            fresh--;
+                        }
                     }
                 }
             }
-            fresh -= newRotten;
+            q.pop_front();
             if (newRotten == 0) {
                 break;
             }
-            q.pop_front();
             ans++;
         }
         if (fresh) {
