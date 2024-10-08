@@ -1,33 +1,37 @@
 class Solution {
 public:
-    bool vis[10][10];
-    int n, m;
-    
-    bool dfs(int i, int j, vector<vector<char>>& board, int curr, string &word) {
-        if (i < 0 || j < 0 || i >= n || j >= m || vis[i][j] || board[i][j] != word[curr]) {
-            return false;
-        }
-        if (curr == word.size() - 1) {
+    bool solve (int i, int j, vector<vector<bool>>& vis, vector<vector<char>>& board, int pos, string& word) {
+        if (pos == word.size()) {
             return true;
         }
-        
-        vis[i][j] = true;
-        bool ans = dfs(i, j + 1, board, curr + 1, word) |
-            dfs(i, j - 1, board, curr + 1, word) |
-            dfs(i + 1, j, board, curr + 1, word) |
-            dfs(i - 1, j, board, curr + 1, word);
-        vis[i][j] = false;
+        if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size() || vis[i][j]) {
+            return false;
+        }
+        bool ans = false;
+        pair<int, int> dirs[] = {
+            {0, 1},
+            {1, 0},
+            {0, -1},
+            {-1, 0}
+        };
+        if (board[i][j] == word[pos]) {
+            vis[i][j] = true;
+            for (auto dir : dirs) {
+                ans = ans || solve(i + dir.first, j + dir.second, vis, board, pos + 1, word);
+            }
+            vis[i][j] = false;
+        }
         return ans;
     }
     
     bool exist(vector<vector<char>>& board, string word) {
-        n = board.size();
-        m = board[0].size();
-        
+        int n = board.size();
+        int m = board[0].size();
+        vector<vector<bool>> vis (n + 1, vector<bool> (m + 1, false));
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (board[i][j] == word[0]) {
-                    if (dfs(i, j, board, 0, word)) {
+                    if (solve(i, j, vis, board, 0, word)) {
                         return true;
                     }
                 }
