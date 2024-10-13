@@ -8,6 +8,11 @@
  */
 class Solution {
 public:
+    // (head) TO (first node where cycle begins) = X distance
+    // (first node where cycle begins) TO (where slow ans fast pointer meets) = Y distance
+    // (where slow ans fast pointer meets) TO (first node where cycle begins) = Z distance
+    // 2 * (X + Y) = X + Y + Z + Y
+    // X = Z (Mathametical proof)
     ListNode *detectCycle(ListNode *head) {
         if (!head) {
             return head;
