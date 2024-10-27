@@ -1,4 +1,4 @@
-class Solution {
+class Solution {    // DISJOINT SET UNION
     int parent[1001];
     void make_set (int n) {
         for (int i = 1; i <= n; i++) {
@@ -28,7 +28,7 @@ public:
         make_set(n);
         vector<int> ans;
         for (auto edge : edges) {
-            if (find_set(edge[0]) == find_set(edge[1])) {
+            if (find_set(edge[0]) == find_set(edge[1])) { // Always use find_set() to find parent, not parent[i]
                 ans = edge;
             }
             union_set(edge[0], edge[1]);
