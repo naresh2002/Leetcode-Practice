@@ -1,4 +1,4 @@
-class Solution {
+class Solution {    // DISJOINT SET UNION
     int parent[200000];
     void make_set(int n) {
         for (int i = 0; i < n; i++) {
