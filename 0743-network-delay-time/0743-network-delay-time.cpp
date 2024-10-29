@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // Dijkstra using Priority Queue (Min-Heap)
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
         vector<pair<int, int>> adj[n];
