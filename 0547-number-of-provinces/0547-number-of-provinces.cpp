@@ -1,12 +1,10 @@
-class Solution { // DISJOINT SET UNION
-    int parent[201];
-    
-    void make_set (int n) {
+class Solution {
+    int parent[202];
+    void make_set(int n) {
         for (int i = 0; i < n; i++) {
             parent[i] = i;
         }
     }
-    
     int find_set(int a) {
         if (parent[a] == a) {
             return a;
@@ -14,7 +12,6 @@ class Solution { // DISJOINT SET UNION
         parent[a] = find_set(parent[a]);
         return parent[a];
     }
-    
     void union_set(int a, int b) {
         a = find_set(a);
         b = find_set(b);
@@ -36,7 +33,7 @@ public:
         }
         int ans = 0;
         for (int i = 0; i < n; i++) {
-            if (parent[i] == i) {
+            if (find_set(i) == i) {
                 ans++;
             }
         }
