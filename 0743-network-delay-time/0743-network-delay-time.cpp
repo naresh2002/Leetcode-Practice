@@ -15,6 +15,7 @@ public:
             int cost = q.top().first;
             int u = q.top().second;
             q.pop();
+            if (visit[u]) continue;
             visit[u] = true;
             for (auto x : adj[u]) {
                 int v = x.first;
