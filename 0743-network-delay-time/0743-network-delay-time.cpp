@@ -19,7 +19,7 @@ public:
             for (auto x : adj[u]) {
                 int v = x.first;
                 int weight = x.second;
-                if (visit[v] == false && dist[v] > dist[u] + weight) {
+                if (dist[v] > dist[u] + weight) {
                     dist[v] = dist[u] + weight;
                     q.push(make_pair(dist[v], v)); // Can also be like this
                 }
