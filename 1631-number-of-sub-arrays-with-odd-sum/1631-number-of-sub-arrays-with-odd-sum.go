@@ -9,7 +9,7 @@ func numOfSubarrays(arr []int) int {
         currSum += arr[i]
         if currSum % 2 == 1 {
             oddCnt += 1
-            ans += evenCnt + 1 // As arr[i] itself is subarray with size odd
+            ans += evenCnt + 1 // As arr[i] itself is subarray with sum odd
         } else {
             evenCnt += 1
             ans += oddCnt
