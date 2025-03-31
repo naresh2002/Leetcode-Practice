@@ -6,6 +6,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 |  |
 | ------- |
+| [0768-partition-labels](https://github.com/naresh2002/Leetcode-Practice/tree/master/0768-partition-labels) |
 | [3709-find-special-substring-of-length-k](https://github.com/naresh2002/Leetcode-Practice/tree/master/3709-find-special-substring-of-length-k) |
 ## Array
 |  |
@@ -38,6 +39,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Hash Table
 |  |
 | ------- |
+| [0768-partition-labels](https://github.com/naresh2002/Leetcode-Practice/tree/master/0768-partition-labels) |
 | [2308-divide-array-into-equal-pairs](https://github.com/naresh2002/Leetcode-Practice/tree/master/2308-divide-array-into-equal-pairs) |
 ## Bit Manipulation
 |  |
@@ -47,4 +49,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [3430-count-days-without-meetings](https://github.com/naresh2002/Leetcode-Practice/tree/master/3430-count-days-without-meetings) |
+## Two Pointers
+|  |
+| ------- |
+| [0768-partition-labels](https://github.com/naresh2002/Leetcode-Practice/tree/master/0768-partition-labels) |
+## Greedy
+|  |
+| ------- |
+| [0768-partition-labels](https://github.com/naresh2002/Leetcode-Practice/tree/master/0768-partition-labels) |
 <!---LeetCode Topics End-->
